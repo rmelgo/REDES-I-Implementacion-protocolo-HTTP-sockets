@@ -11,6 +11,8 @@ Proyecto realizado en la asignatura de Redes de Computadores I del grado de Inge
 El principal objetivo de este proyecto es la realización de un programa en C que implemente un versión reducida del protocolo HTTP utilizando la API de sockets de Berkeley, siguiendo las especificaciones descritas en *Sockets2021_G.pdf*.
 De esta manera, el objetivo principal no es la programación sino el aprendizaje del uso del los sockets como los protocolos de comunicación TCP y UDP.
 
+El proyecto incluye un documento llamado *Memoria.pdf* que contiene una breve explicación del código implementado así como unas pruebas de ejecución del correcto funcionamiento del proyecto.
+
 # - Comentarios sobre el entorno de ejecución
 
 Para ejecutar este programa, se requerira de una distribución del Sistema Operativo **GNU/Linux**.    
@@ -18,27 +20,6 @@ Para ejecutar este programa, se requerira de una distribución del Sistema Opera
 Para poder compilar correctamente el programa, se deberá tener instalada una version del compilador gcc o similar. En el caso de no tener gcc, se puede instalar facilmente con el siguiente comando:
 
 ```sudo apt install gcc```
-
-# Comentarios sobre el material adjuntado
-
-El proyecto cuenta con los siguientes ficheros:
-
-- Un fichero llamado ***servidor.c*** que contendrá el código necesario para recibir las peticiones de los clientes tanto en ***TCP*** como ***UDP*** y responder a los clientes de manera adecuada, siguiendo las normas del protocolo HTTP.
-- Un fichero llamado ***cliente.c*** que contendrá el código necesario para realizar peticiones al servidor tanto en ***TCP*** como ***UDP*** asi como el código necesario para recibir correctamente las respuestas suminsitradas por el servidor.
-- Un fichero llamado ***makefile*** que contiene unas directivas de compilación básicas para generar un ejecutable tanto del programa cliente como del programa servidor.
-- Un fichero llamado ***ordenes.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
-- Un fichero llamado ***ordenes1.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
-- Un fichero llamado ***ordenes2.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
-- Un fichero llamado ***ordenes3.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
-- Un fichero llamado ***lanzaServidor.sh*** el cual se trata de un script en bash que realiza las siguientes tareas:
-
-  - Ejecutar el makefile de manera que se genere el ejecutable tanto del código del servidor como el código del cliente.
-  - Lanzar el servidor, que se ejecutará como un proceso daemon y estará ejecutandose en segundo plano permanentemente.
-  - Lanzar el cliente utilizando los distintos ficheros de ordenes tanto en el protocolo TCP como UDP.   
-
-De esta manera, se consigue probar todos los tipos de peticiones HTTP posibles en los 2 protocolos de transporte (TCP y UDP) y probar como el servidor responde en cada una de estas situaciones.
-- Un fichero llamado ***peticiones.log*** que contiene un registro de las peticiones recibidas por el servidor mientras este se encontraba en mantenimiento. También se registran las comunicaciones establecidas y finalizadas con los distintos clientes.
-- Una carpeta llamada ***Paginas_web*** que contiene distintas páginas web en formato HTML. De esta manera, cuendo el servidor reciba una petición HTTP sobre una página web determinada, este buscará dentro de dicha carpeta y proporcionara el contenido de dicha página web en el caso de que esta exista.
 
 # - Funcionamiento del proyecto
 
@@ -205,6 +186,27 @@ En la siguiente imagen, se muestra un ejemplo del contenido de dicho fichero de 
 
 ![Ejemplo puerto efimero con borde](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/b314bdd0-cb00-4bd7-9ffb-01a01e9a6f45)
 
+# Comentarios sobre el material adjuntado
+
+El proyecto cuenta con los siguientes ficheros:
+
+- Un fichero llamado ***servidor.c*** que contendrá el código necesario para recibir las peticiones de los clientes tanto en ***TCP*** como ***UDP*** y responder a los clientes de manera adecuada, siguiendo las normas del protocolo HTTP.
+- Un fichero llamado ***cliente.c*** que contendrá el código necesario para realizar peticiones al servidor tanto en ***TCP*** como ***UDP*** asi como el código necesario para recibir correctamente las respuestas suminsitradas por el servidor.
+- Un fichero llamado ***makefile*** que contiene unas directivas de compilación básicas para generar un ejecutable tanto del programa cliente como del programa servidor.
+- Un fichero llamado ***ordenes.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
+- Un fichero llamado ***ordenes1.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
+- Un fichero llamado ***ordenes2.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
+- Un fichero llamado ***ordenes3.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
+- Un fichero llamado ***lanzaServidor.sh*** el cual se trata de un script en bash que realiza las siguientes tareas:
+
+  - Ejecutar el makefile de manera que se genere el ejecutable tanto del código del servidor como el código del cliente.
+  - Lanzar el servidor, que se ejecutará como un proceso daemon y estará ejecutandose en segundo plano permanentemente.
+  - Lanzar el cliente utilizando los distintos ficheros de ordenes tanto en el protocolo TCP como UDP.   
+
+De esta manera, se consigue probar todos los tipos de peticiones HTTP posibles en los 2 protocolos de transporte (TCP y UDP) y probar como el servidor responde en cada una de estas situaciones.
+- Un fichero llamado ***peticiones.log*** que contiene un registro de las peticiones recibidas por el servidor mientras este se encontraba en mantenimiento. También se registran las comunicaciones establecidas y finalizadas con los distintos clientes.
+- Una carpeta llamada ***Paginas_web*** que contiene distintas páginas web en formato HTML. De esta manera, cuendo el servidor reciba una petición HTTP sobre una página web determinada, este buscará dentro de dicha carpeta y proporcionara el contenido de dicha página web en el caso de que esta exista.
+
 # - Pasos necesarios para ejecutar el programa
 
 **Paso 1: Compilar el programa**  
@@ -266,6 +268,6 @@ Por otro lado, el contenido del fichero del puerto efímero es el siguiente:
 
 En último lugar, se mostrará el contenido del fichero ***peticiones.log*** tras realizar estos 2 ejemplos. El contenido es el siguiente:
 
-![Ejemplo log](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/1640a80a-9759-4f70-96ae-ada624c65c9a)
+![Ejemplo ejecucion log](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/91eb2660-aa4d-443c-acde-72e0ceb1785f)
 
-Nota: Mirar líneas 159-180, el resto no tiene que ver con los ejemplos realizados en esta sección.
+**Nota**: Mirar líneas 159-180, el resto no tiene que ver con los ejemplos realizados en esta sección.
