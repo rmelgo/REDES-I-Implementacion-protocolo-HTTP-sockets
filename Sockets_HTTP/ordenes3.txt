@@ -1,0 +1,4 @@
+GET /docencia.html k
+GET /docencia.html k
+DAME /docencia.html k
+GET /docencia2.html c

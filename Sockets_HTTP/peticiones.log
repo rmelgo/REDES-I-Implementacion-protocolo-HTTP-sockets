@@ -1,0 +1,189 @@
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 UDP 51852
+
+501 Not Implemented. La orden  no esta implementada
+
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 UDP 51852
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 UDP 46233
+
+501 Not Implemented. La orden  no esta implementada
+
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 UDP 46233
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 UDP 60474
+
+501 Not Implemented. La orden  no esta implementada
+
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 UDP 60474
+Tue Dec 14 14:16:48 2021
+./servidor
+
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 TCP 57730
+
+200 OK. La pagina index.html se ha encontrado correctamente
+200 OK. La pagina docencia.html se ha encontrado correctamente
+404 Not Found. La pagina ejemplo.html no se ha encontrado
+
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 TCP 57730
+Tue Dec 14 14:16:48 2021
+./servidor
+
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 TCP 57732
+
+200 OK. La pagina index.html se ha encontrado correctamente
+505 Not Implemented. La orden HOLA no esta implementada
+404 Not Found. La pagina ejemplo1.html no se ha encontrado
+404 Not Found. La pagina ejemplo2.html no se ha encontrado
+404 Not Found. La pagina ejemplo3.html no se ha encontrado
+404 Not Found. La pagina ejemplo4.html no se ha encontrado
+
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 TCP 57732
+Tue Dec 14 14:16:48 2021
+./servidor
+
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 TCP 57734
+
+505 Not Implemented. La orden DAME no esta implementada
+200 OK. La pagina index.html se ha encontrado correctamente
+200 OK. La pagina docencia.html se ha encontrado correctamente
+404 Not Found. La pagina ejemplo1.html no se ha encontrado
+404 Not Found. La pagina ejemplo2.html no se ha encontrado
+404 Not Found. La pagina ejemplo3.html no se ha encontrado
+404 Not Found. La pagina ejemplo4.html no se ha encontrado
+
+Tue Dec 14 14:16:49 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 TCP 57734
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 UDP 57763
+
+501 Not Implemented. La orden  no esta implementada
+
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 UDP 57763
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 UDP 54598
+
+501 Not Implemented. La orden  no esta implementada
+
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 UDP 54598
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 UDP 58038
+
+501 Not Implemented. La orden  no esta implementada
+
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 UDP 58038
+Tue Dec 14 14:22:53 2021
+./servidor
+
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 TCP 58598
+
+200 OK. La pagina index.html se ha encontrado correctamente
+200 OK. La pagina docencia.html se ha encontrado correctamente
+404 Not Found. La pagina ejemplo.html no se ha encontrado
+
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 TCP 58598
+Tue Dec 14 14:22:53 2021
+./servidor
+
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 TCP 58600
+
+200 OK. La pagina index.html se ha encontrado correctamente
+505 Not Implemented. La orden HOLA no esta implementada
+404 Not Found. La pagina ejemplo1.html no se ha encontrado
+404 Not Found. La pagina ejemplo2.html no se ha encontrado
+404 Not Found. La pagina ejemplo3.html no se ha encontrado
+404 Not Found. La pagina ejemplo4.html no se ha encontrado
+
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 TCP 58600
+Tue Dec 14 14:22:53 2021
+./servidor
+
+Comunicacion realizada: nogal.fis.usal.es 212.128.144.105 TCP 58596
+
+505 Not Implemented. La orden DAME no esta implementada
+200 OK. La pagina index.html se ha encontrado correctamente
+200 OK. La pagina docencia.html se ha encontrado correctamente
+404 Not Found. La pagina ejemplo1.html no se ha encontrado
+404 Not Found. La pagina ejemplo2.html no se ha encontrado
+404 Not Found. La pagina ejemplo3.html no se ha encontrado
+404 Not Found. La pagina ejemplo4.html no se ha encontrado
+
+Tue Dec 14 14:22:53 2021
+./servidor
+Comunicacion finalizada: nogal.fis.usal.es 212.128.144.105 TCP 58596
+Tue Dec 14 14:43:32 2021
+./servidor
+Comunicacion realizada: localhost 127.0.0.1 UDP 58418
+
+200 OK. La pagina index.html se ha encontrado correctamente
+
+Tue Dec 14 14:43:35 2021
+./servidor
+Comunicacion finalizada: localhost 127.0.0.1 UDP 58418
+Tue Dec 14 15:14:41 2021
+./servidor
+Comunicacion realizada: localhost 127.0.0.1 UDP 58404
+
+200 OK. La pagina index.html se ha encontrado correctamente
+
+Tue Dec 14 15:14:43 2021
+./servidor
+Comunicacion finalizada: localhost 127.0.0.1 UDP 58404
+Tue Dec 14 15:25:10 2021
+./servidor
+
+Comunicacion realizada: localhost 127.0.0.1 TCP 53976
+
+200 OK. La pagina docencia.html se ha encontrado correctamente
+200 OK. La pagina docencia.html se ha encontrado correctamente
+505 Not Implemented. La orden DAME no esta implementada
+404 Not Found. La pagina docencia2.html no se ha encontrado
+
+Tue Dec 14 15:25:10 2021
+./servidor
+Comunicacion finalizada: localhost 127.0.0.1 TCP 53976
+Tue Dec 14 15:28:43 2021
+./servidor
+Comunicacion realizada: localhost 127.0.0.1 UDP 39812
+
+200 OK. La pagina index.html se ha encontrado correctamente
+
+Tue Dec 14 15:28:46 2021
+./servidor
+Comunicacion finalizada: localhost 127.0.0.1 UDP 39812
+Tue Dec 14 15:28:50 2021
+./servidor
+Comunicacion realizada: localhost 127.0.0.1 UDP 53529
+
+200 OK. La pagina docencia.html se ha encontrado correctamente
+
+Tue Dec 14 15:28:50 2021
+./servidor
+Comunicacion finalizada: localhost 127.0.0.1 UDP 53529
