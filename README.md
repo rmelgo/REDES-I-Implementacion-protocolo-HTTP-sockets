@@ -31,6 +31,7 @@ El proyecto cuenta con los siguientes ficheros:
 - Un fichero llamado ***ordenes2.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
 - Un fichero llamado ***ordenes3.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
 - Un fichero llamado ***lanzaServidor.sh*** el cual se trata de un script en bash que realiza las siguientes tareas:
+
   - Ejecutar el makefile de manera que se genere el ejecutable tanto del código del servidor como el código del cliente.
   - Lanzar el servidor, que se ejecutará como un proceso daemon y estará ejecutandose en segundo plano permanentemente.
   - Lanzar el cliente utilizando los distintos ficheros de ordenes tanto en el protocolo TCP como UDP.   
@@ -236,4 +237,35 @@ Para finalizar la ejecución del servidor, se debe buscar el PID del proceso cor
 
 # - Ejemplo de ejecución
 
+## Ejemplo de ejecución con TCP
 
+En primer lugar, se mostrará un ejemplo del funcionamiento del proyecto utilizando el protocolo TCP y el fichero *ordenes3.txt*.
+
+Tras realizar la prueba, el resultado obtenido en la terminal es el siguiente:
+
+![Ejemplo ejecucion TCP](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/d71c66c2-ecae-4d9a-8722-0d3189b1ae61)
+
+Por otro lado, el contenido del fichero del puerto efímero es el siguiente:
+
+![Ejemplo ejecucion TCP efimero 1](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/11d1c768-6102-453b-8f09-0c88dd6e8929)
+![Ejemplo ejecucion TCP efimero 2](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/4c865bb2-9653-4248-88fb-cfcc02281133)
+
+## Ejemplo de ejecución con UDP
+
+En segundo lugar, se mostrará un ejemplo del funcionamiento del proyecto utilizando el protocolo UDP y el fichero *ordenes3.txt*.
+
+Tras realizar la prueba, el resultado obtenido en la terminal es el siguiente:
+
+![Ejemplo ejecucion UDP](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/82e996c6-0b0a-4155-b915-0341ca487abf)
+
+Por otro lado, el contenido del fichero del puerto efímero es el siguiente:
+
+![Ejemplo ejecucion UDP efimero](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/cf6d3227-9e8d-47a9-9766-23caa01da105)
+
+## Registro de las peticiones
+
+En último lugar, se mostrará el contenido del fichero ***peticiones.log*** tras realizar estos 2 ejemplos. El contenido es el siguiente:
+
+![Ejemplo log](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/1640a80a-9759-4f70-96ae-ada624c65c9a)
+
+Nota: Mirar líneas 159-180, el resto no tiene que ver con los ejemplos realizados en esta sección.
