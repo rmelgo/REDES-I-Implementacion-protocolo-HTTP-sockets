@@ -52,14 +52,14 @@ El protocolo HTTP cuenta con 2 tipos de mensajes:
 Las peticiones de los clientes al servidor deben tener la siguiente estructura: 
 
 ```GET <nombre-página-web> <versión-HTTP> <CR><LF>```  
-```Host: <nombre-host-cliente> <CR><LF>```   
+```Host: <nombre-host-servidor> <CR><LF>```   
 ```Connection: <tipo-conexión> <CR><LF>```  
 ```<CR><LF>```
 
 Significado de los campos:
 - ***<nombre-página-web>*** hace referencia al nombre de la página web de la cual se desea recuperar su contenido.
 - ***<versión-HTTP>*** hace referencia a la versión del protocolo HTTP utilizada.
-- **<*nombre-host-cliente*>** hace referencia al nombre de la máquina del cliente.
+- **<*nombre-host-servidor*>** hace referencia al nombre de la máquina del servidor.
 - ***<tipo-conexión>*** hace referencia al tipo de conexión realizada con el cliente. Existen 2 tipos de conexiones:
   
   - **keep-alive**: La conexión del cliente con el servidor permanece abierta, permitiendo realizar varias peticiones seguidas sin cerrar la conexión con el servidor.
@@ -135,6 +135,23 @@ Significado de los campos:
 ```Content-Length: 56 <CR><LF>```  
 ```<CR><LF>```
 ```<html><body><h1> 501 Not Implemented </h1></body></html>```
+
+## Tareas realizadas por el servidor
+
+El servidor debe estar disponible para atender disintas peticiones de clientes, por lo que se ejecutará permanentemente en segundo plano como un ***proceso daemon***.
+
+El servidor aceptará peticiones de clientes tanto en TCP como en UDP.
+
+Cada vez que reciba una peticion GET, el servidor buscará en la carpeta ***Paginas_web*** el contenido de la págian web solicitada. En esta carpeta se pueden ir añadiendo disintas páginas web de prueba para comprobar el correcto funcionamiento del proyecto.
+
+Adicionalmente, el servidor creará un fichero llamado ***peticiones.log*** en el que registrará todos los eventos que se produzcan. Para cada evento se registrará la siguiente información:
+
+- **Fecha y hora** en la que se produce el evento
+- **Nombre del ejecutable** que registra el evento
+- **Descripción del evento**: Esta descripción variará en función del tipo de evento. Se distiguen 3 tipos de eventos:
+  - Comunicación realizada:
+  - Operación:
+  - Comunicación finalizada:
   
 # - Pasos necesarios para ejecutar el programa
 
