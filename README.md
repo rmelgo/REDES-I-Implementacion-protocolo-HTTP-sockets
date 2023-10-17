@@ -36,7 +36,7 @@ El proyecto cuenta con los siguientes ficheros:
   - Lanzar el cliente utilizando los distintos ficheros de ordenes tanto en el protocolo TCP como UDP.   
 
 De esta manera, se consigue probar todos los tipos de peticiones HTTP posibles en los 2 protocolos de transporte (TCP y UDP) y probar como el servidor responde en cada una de estas situaciones.
-- Un fichero llamado ***peticiones.log*** que contiene un registro de las peticiones recibidas por el servidor mientras este se encontraba en mantenimiento. También se registran las conexiones establecidas y finalizadas con los disintos clientes.
+- Un fichero llamado ***peticiones.log*** que contiene un registro de las peticiones recibidas por el servidor mientras este se encontraba en mantenimiento. También se registran las comunicaciones establecidas y finalizadas con los distintos clientes.
 - Una carpeta llamada ***Paginas_web*** que contiene distintas páginas web en formato HTML. De esta manera, cuendo el servidor reciba una petición HTTP sobre una página web determinada, este buscará dentro de dicha carpeta y proporcionara el contenido de dicha página web en el caso de que esta exista.
 
 # - Funcionamiento del proyecto
@@ -142,17 +142,59 @@ El servidor debe estar disponible para atender disintas peticiones de clientes, 
 
 El servidor aceptará peticiones de clientes tanto en TCP como en UDP.
 
-Cada vez que reciba una peticion GET, el servidor buscará en la carpeta ***Paginas_web*** el contenido de la págian web solicitada. En esta carpeta se pueden ir añadiendo disintas páginas web de prueba para comprobar el correcto funcionamiento del proyecto.
+Cada vez que reciba una peticion GET, el servidor buscará en la carpeta ***Paginas_web*** el contenido de la página web solicitada. En esta carpeta se pueden ir añadiendo disintas páginas web de prueba para comprobar el correcto funcionamiento del proyecto.
 
 Adicionalmente, el servidor creará un fichero llamado ***peticiones.log*** en el que registrará todos los eventos que se produzcan. Para cada evento se registrará la siguiente información:
 
 - **Fecha y hora** en la que se produce el evento
 - **Nombre del ejecutable** que registra el evento
 - **Descripción del evento**: Esta descripción variará en función del tipo de evento. Se distiguen 3 tipos de eventos:
-  - Comunicación realizada:
-  - Operación:
-  - Comunicación finalizada:
   
+  - **Comunicación realizada**: Este evento se produce cuando se establece una nueva comunicación con un nuevo cliente. Para este evento se registrará la siguente información:
+    
+      - Nombre o hostname del equipo cliente
+      - Dirección IP del equipo cliente
+      - Protocolo de transporte utilizado para la comunicación (TCP o UDP)
+      - Número del puerto efímero utilizado por el cliente
+  - **Operación**: Este evento se produce cuando cuando el servidor responde a una petición realizada por un cliente. Para este evento se registrará un mensaje indicando la correcta atención a la petición si se ha atendido correctamente o la causa de error si la petición no se ha podido atender correctamente.
+  - **Comunicación finalizada**: Este evento se produce cuando finaliza una comunicación con un cliente. Para este evento se registrará la siguente información:
+    
+      - Nombre o hostname del equipo cliente
+      - Dirección IP del equipo cliente
+      - Protocolo de transporte utilizado para la comunicación (TCP o UDP)
+      - Número del puerto efímero utilizado por el cliente
+   
+En la siguiente imagen se adjunta un ejemplo de como puede quedar el fichero ***peticiones.log***:
+
+![Ejemplo log con borde](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/fb35365b-457c-4e23-8768-e4098f921b2b)
+
+## Tareas realizadas por el cliente
+
+Realizará peticiones al servidor utilizando los protocolos de transporte TCP o UDP.
+
+Para poder funcionar correctamente, se debe especificar en la ejecución del cliente los siguientes parámetros:
+
+- El nombre (hostname) o dirección IP del servidor
+- El protocolo de transporte utilizado para la comunicación (TCP o UDP)
+- Un fichero de texto donde se encuentran las peticiones u ordenes que debe realizar el cliente.
+
+Las peticiones dentro del fichero deben tener la siguiente estructura:
+
+```<nombre-petición> <nombre-página-web> <k/c>```  
+
+Significado de los campos:
+- ***<nombre-petición>*** hace referencia al nombre de la petición que se desea realizar.
+- ***<versión-HTTP>*** hace referencia a la versión del protocolo HTTP utilizada.
+- **<*k/c*>** indica como debe ser el estado de la conexión despues de realizar la petición. En el caso de utilizar el protocolo TCP, una k significa que se desea mantener la conexión con el servidor tras realizar la petición y una c significa que se desea finalizar la conexión con el servidor una vez realizada la petición. En el protocolo UDP este campo no es necesario ya que no se establece ningín tipo de conexión.
+
+Ejemplo de ejecución del cliente:
+
+```GET /index.html k```  
+
+Ejemplo de ejecución del cliente:
+
+```cliente www.usal.es TCP ordenes.txt```  
+
 # - Pasos necesarios para ejecutar el programa
 
 **Paso 1: Compilar el programa**  
@@ -165,7 +207,8 @@ Como la libreria *libcruce.a* esta diseñada para sistemas de 32 bits y no es po
 
 ```gcc -m32 cruce.c libcruce.a -o cruce```
 
-Si se produce algún tipo de error al realizar la compilación será por que el sistema donde se ejecuta el programa no tiene las librerias de 32 bits necesarias. Para incluirlas se deberá ejecutar el siguyiente comando:
+Si se produce algún tipo de error al realizar la compilación será por que el sistema donde se ejecuta el programa no tiene !
+las librerias de 32 bits necesarias. Para incluirlas se deberá ejecutar el siguyiente comando:
 
 ```sudo apt-get install gcc-multilib```
 
