@@ -183,17 +183,26 @@ Las peticiones dentro del fichero deben tener la siguiente estructura:
 ```<nombre-petición> <nombre-página-web> <k/c>```  
 
 Significado de los campos:
+
 - ***<nombre-petición>*** hace referencia al nombre de la petición que se desea realizar.
 - ***<versión-HTTP>*** hace referencia a la versión del protocolo HTTP utilizada.
-- **<*k/c*>** indica como debe ser el estado de la conexión despues de realizar la petición. En el caso de utilizar el protocolo TCP, una k significa que se desea mantener la conexión con el servidor tras realizar la petición y una c significa que se desea finalizar la conexión con el servidor una vez realizada la petición. En el protocolo UDP este campo no es necesario ya que no se establece ningín tipo de conexión.
+- **<*k/c*>** indica como debe ser el estado de la conexión despues de realizar la petición. En el caso de utilizar el protocolo TCP, una k significa que se desea mantener la conexión con el servidor tras realizar la petición y una c significa que se desea finalizar la conexión con el servidor una vez realizada la petición. En el protocolo UDP este campo no es necesario ya que no se establece ningún tipo de conexión.
 
-Ejemplo de ejecución del cliente:
+### Ejemplo de petición del cliente:
 
 ```GET /index.html k```  
 
-Ejemplo de ejecución del cliente:
+### Ejemplo de comando de ejecución del cliente:
 
 ```cliente www.usal.es TCP ordenes.txt```  
+
+### Registro de la actividad del cliente
+
+Por otra parte, el contenido tanto de las peticiones realizas por el cliente como las respuestas recibidas por el servidor se almacenarán en un fichero de texto cuyo nombre será el número de puerto efímero utilizado por el cliente en dicha comunicación.
+
+En la siguiente imagen, se muestra un ejemplo del contenido de dicho fichero de texto:
+
+![Ejemplo puerto efimero con borde](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/b314bdd0-cb00-4bd7-9ffb-01a01e9a6f45)
 
 # - Pasos necesarios para ejecutar el programa
 
@@ -201,30 +210,29 @@ Ejemplo de ejecución del cliente:
 
 Para ello se debe introducir el siguiente comando:    
 
-```gcc cruce.c libcruce.a -o cruce```
+```make```
 
-Como la libreria *libcruce.a* esta diseñada para sistemas de 32 bits y no es posible mezclar código de 64 bits con codigo de 32 bits, será necesario incluir una nueva directiva en el comando gcc para que genere codigo en 32 bits compatible con la biblioteca. De esta manera, el comando necesario para compilar el programa es el siguiente:
-
-```gcc -m32 cruce.c libcruce.a -o cruce```
-
-Si se produce algún tipo de error al realizar la compilación será por que el sistema donde se ejecuta el programa no tiene !
-las librerias de 32 bits necesarias. Para incluirlas se deberá ejecutar el siguyiente comando:
-
-```sudo apt-get install gcc-multilib```
-
-Tras ejecutar este comando, se generará un fichero ejecutable llamado *cruce*. Observese como es necesario tanto el fichero *cruce.c* como la biblioteca estática de funciones *libcruce.a* para generar el ejecutable.
+Con este comando se compila tanto el código del cliente como el código del servidor, utilizando las directivas de compilación del fichero ***makefile***. El script ***lanzaServidor.sh*** también realiza este cometido.
 
 **Paso 2: Ejecutar el programa**  
 
-Para ello se debe introducir el siguiente comando:    
+Para ello, se debe poner en ejecución al servidor en primer lugar con este simple comando:
 
-```./cruce <número-máximo-procesos> <velocidad>```
+```./servidor```
 
-Tras ejecutar este comando, el programa se habra ejecutado correctamente, siempre y cuendo se hayan introducido los argumentos correspondientes.
+Después, se ejecutará el cliente con la sintaxis especificada anteriormente. Por ejemplo:
+
+```cliente localhost TCP ordenes.txt```  
+
+**Paso 3: Obtención de resultados**  
+
+Se mostrará por la terminal el contenido de las respuestas del servidor en forma de contenido de páginas web o de mensajes de error. Se registrará en ***peticiones.log*** los eventos registrados por el servidor y se crearan los ficheros de depuración con el nombre del puerto efímero correspondientes.
 
 **Finalización del programa**
 
-Para finalizar la ejecución del programa simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el programa automaticamente recibira una señal de terminación por lo que realizará las tareas necsarias para finalizar el cruce y liberar todos los reccursos utilizados.
+Para finalizar la ejecución del cliente simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el cliente automaticamente recibirá una señal de terminación por lo que realizará las tareas necsarias para finalizar el cliente. Sin embargo, el servidor seguira ejecutandose en segundo plano al tratarse de un proceso demonio.
+
+Para finalizar la ejecución del servidor, se debe buscar el PID del proceso correspondiente y matarlo con la orden kill. También es posible acabar con dicho proceso a través del monitor de recursos de Linux.
 
 # - Ejemplo de ejecución
 
