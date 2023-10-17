@@ -1,5 +1,3 @@
-# REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS
-
 # Implementación del protocolo HTTP simplificado mediante el uso de sockets en C
 
 ![descarga](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/d3dca059-14fa-4055-8425-458505a245af)
