@@ -186,7 +186,7 @@ En la siguiente imagen, se muestra un ejemplo del contenido de dicho fichero de 
 
 # Comentarios sobre el material adjuntado
 
-El proyecto cuenta con los siguientes ficheros:
+El proyecto, dentro de la carpeta **Sockets_HTTP**, cuenta con los siguientes ficheros:
 
 - Un fichero llamado ***servidor.c*** que contendrá el código necesario para recibir las peticiones de los clientes tanto en ***TCP*** como ***UDP*** y responder a los clientes de manera adecuada, siguiendo las normas del protocolo HTTP.
 - Un fichero llamado ***cliente.c*** que contendrá el código necesario para realizar peticiones al servidor tanto en ***TCP*** como ***UDP*** asi como el código necesario para recibir correctamente las respuestas suminsitradas por el servidor.
