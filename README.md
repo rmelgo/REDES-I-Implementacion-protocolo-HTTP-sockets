@@ -4,7 +4,7 @@
 
 # - Introducción
 
-Proyecto realizado en la asignatura de Redes de Computadores I del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra subido en el repositorio en un archivo pdf llamado *Sockets2021_G.pdf*.
+Proyecto realizado en la asignatura de ***Redes de Computadores I*** del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra subido en el repositorio en un archivo PDF llamado <a href="https://github.com/rmelgo/REDES-I-Implementacion-protocolo-HTTP-sockets/blob/main/Sockets2021_G.pdf" target="_blank">*Sockets2021_G.pdf*</a>.
   
 El principal objetivo de este proyecto es la realización de un programa en C que implemente un versión reducida del protocolo HTTP utilizando la API de sockets de Berkeley, siguiendo las especificaciones descritas en *Sockets2021_G.pdf*.
 De esta manera, el objetivo principal no es la programación sino el aprendizaje del uso del los sockets como los protocolos de comunicación TCP y UDP.
@@ -13,9 +13,9 @@ El proyecto incluye un documento llamado *Memoria.pdf* que contiene una breve ex
 
 # - Comentarios sobre el entorno de ejecución
 
-Para ejecutar este programa, se requerira de una distribución del Sistema Operativo **GNU/Linux**.    
+Para ejecutar este programa, se requerirá de una distribución del Sistema Operativo **GNU/Linux**.    
 
-Para poder compilar correctamente el programa, se deberá tener instalada una version del compilador gcc o similar. En el caso de no tener gcc, se puede instalar facilmente con el siguiente comando:
+Para poder compilar correctamente el programa, se deberá tener instalada una versión del compilador gcc o similar. En el caso de no tener gcc, se puede instalar fácilmente con el siguiente comando:
 
 ```sudo apt install gcc```
 
@@ -43,9 +43,9 @@ Significado de los campos:
 - ***<tipo-conexión>*** hace referencia al tipo de conexión realizada con el cliente. Existen 2 tipos de conexiones:
   
   - **keep-alive**: La conexión del cliente con el servidor permanece abierta, permitiendo realizar varias peticiones seguidas sin cerrar la conexión con el servidor.
-  - **close**: La conexión del cliente con el servidor se cierra cuando el servidor responda la petición del cliente. Si en el tipo de conexión, el campo aparece vacio, se interpretará como un close.
+  - **close**: La conexión del cliente con el servidor se cierra cuando el servidor responda la petición del cliente. Si en el tipo de conexión, el campo aparece vacío, se interpretará como un close.
 
-**Nota**: Cada linea de una petición HTTP terminan con un par de caracteres ***CR-LF*** donde ***CR*** es el carácter retorno de carro "\r" y ***LF*** es el carácter salto de línea "\n".
+**Nota**: Cada línea de una petición HTTP terminan con un par de caracteres ***CR-LF*** donde ***CR*** es el carácter retorno de carro "\r" y ***LF*** es el carácter salto de línea "\n".
 
 ### Ejemplo de petición HTTP:
 
@@ -69,7 +69,7 @@ Significado de los campos:
 - ***<versión-HTTP>*** hace referencia a la versión del protocolo HTTP utilizada.
 - ***<código-respuesta>*** hace referencia al tipo de respuesta realizada por el servidor. Existen 3 tipos de respuestas:
   
-  - **200 OK**: La petición por parte del cliente se ha realizado correctamente y la página web por la que pregunta el cliente existe y es accesible por el servidor. En este caso, la respuesta incluye e
+  - **200 OK**: La petición por parte del cliente se ha realizado correctamente y la página web por la que pregunta el cliente existe y es accesible por el servidor. En este caso, la respuesta incluye el contenido de la página web solicitada.
   - **404 Not Found**: La petición por parte del cliente se ha realizado correctamente pero la página web por la que pregunta el cliente no existe y no es accesible por el servidor.
   - **501 Not Implemented**: La petición por parte del cliente no se ha realizado correctamente.
   
@@ -77,14 +77,14 @@ Significado de los campos:
 - ***<tipo-conexión>*** hace referencia al tipo de conexión realizada con el cliente. Existen 2 tipos de conexiones:
 
   - **keep-alive**: La conexión del cliente con el servidor permanece abierta, permitiendo realizar varias peticiones seguidas sin cerrar la conexión con el servidor.
-  - **close**: La conexión del cliente con el servidor se cierra cuando el servidor responda la petición del cliente. Si en el tipo de conexión, el campo aparece vacio, se interpretará como un close.
+  - **close**: La conexión del cliente con el servidor se cierra cuando el servidor responda la petición del cliente. Si en el tipo de conexión, el campo aparece vacío, se interpretará como un close.
   
 - **<*longitud-respuesta*>** hace referencia al número de carácteres de la respuesta que se adjunta a continuación.
 - **<*respuesta*>** dependerá del código de respuesta.
-  - Si el código de respuesta es **200 OK** este campo incluye el contenido de la página web que solicito el cliente.
-  - Si el código de respuesta es **404 Not Found** este campo incluye el siguiente mensaje:  
+  - Si el código de respuesta es **200 OK**, este campo incluye el contenido de la página web que solicito el cliente.
+  - Si el código de respuesta es **404 Not Found**, este campo incluye el siguiente mensaje:  
     ```<html><body><h1>404 Not found</h1></body></html>```
-  - Si el código de respuesta es **501 Not Implemented** este campo incluye el siguiente mensaje:  
+  - Si el código de respuesta es **501 Not Implemented**. este campo incluye el siguiente mensaje:  
     ```<html><body><h1>501 Not Implemented</h1></body></html>```
     
 **Nota**: Cada linea de una petición HTTP terminan con un par de caracteres ***CR-LF*** donde ***CR*** es el carácter retorno de carro "\r" y ***LF*** es el carácter salto de línea "\n".
@@ -124,27 +124,27 @@ El servidor aceptará peticiones de clientes tanto en TCP como en UDP.
 
 Cada vez que reciba una peticion GET, el servidor buscará en la carpeta ***Paginas_web*** el contenido de la página web solicitada. En esta carpeta se pueden ir añadiendo disintas páginas web de prueba para comprobar el correcto funcionamiento del proyecto.
 
-Adicionalmente, el servidor creará un fichero llamado ***peticiones.log*** en el que registrará todos los eventos que se produzcan. Para cada evento se registrará la siguiente información:
+Adicionalmente, el servidor creará un fichero llamado ***peticiones.log*** en el que registrará todos los eventos que se produzcan. Para cada evento, se registrará la siguiente información:
 
 - **Fecha y hora** en la que se produce el evento
 - **Nombre del ejecutable** que registra el evento
-- **Descripción del evento**: Esta descripción variará en función del tipo de evento. Se distiguen 3 tipos de eventos:
+- **Descripción del evento**: Esta descripción variará en función del tipo de evento. Se distinguen 3 tipos de eventos:
   
-  - **Comunicación realizada**: Este evento se produce cuando se establece una nueva comunicación con un nuevo cliente. Para este evento se registrará la siguente información:
+  - **Comunicación realizada**: Este evento se produce cuando se establece una nueva comunicación con un nuevo cliente. Para este evento, se registrará la siguente información:
     
       - Nombre o hostname del equipo cliente
       - Dirección IP del equipo cliente
       - Protocolo de transporte utilizado para la comunicación (TCP o UDP)
       - Número del puerto efímero utilizado por el cliente
-  - **Operación**: Este evento se produce cuando cuando el servidor responde a una petición realizada por un cliente. Para este evento se registrará un mensaje indicando la correcta atención a la petición si se ha atendido correctamente o la causa de error si la petición no se ha podido atender correctamente.
-  - **Comunicación finalizada**: Este evento se produce cuando finaliza una comunicación con un cliente. Para este evento se registrará la siguente información:
+  - **Operación**: Este evento se produce cuando cuando el servidor responde a una petición realizada por un cliente. Para este evento, se registrará un mensaje indicando la correcta atención a la petición si se ha atendido correctamente o la causa de error si la petición no se ha podido atender correctamente.
+  - **Comunicación finalizada**: Este evento se produce cuando finaliza una comunicación con un cliente. Para este evento, se registrará la siguente información:
     
       - Nombre o hostname del equipo cliente
       - Dirección IP del equipo cliente
       - Protocolo de transporte utilizado para la comunicación (TCP o UDP)
       - Número del puerto efímero utilizado por el cliente
    
-En la siguiente imagen se adjunta un ejemplo de como puede quedar el fichero ***peticiones.log***:
+En la siguiente imagen, se adjunta un ejemplo de como puede quedar el fichero ***peticiones.log***:
 
 ![Ejemplo log con borde](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/fb35365b-457c-4e23-8768-e4098f921b2b)
 
@@ -166,7 +166,7 @@ Significado de los campos:
 
 - ***<nombre-petición>*** hace referencia al nombre de la petición que se desea realizar.
 - ***<versión-HTTP>*** hace referencia a la versión del protocolo HTTP utilizada.
-- **<*k/c*>** indica como debe ser el estado de la conexión despues de realizar la petición. En el caso de utilizar el protocolo TCP, una k significa que se desea mantener la conexión con el servidor tras realizar la petición y una c significa que se desea finalizar la conexión con el servidor una vez realizada la petición. En el protocolo UDP este campo no es necesario ya que no se establece ningún tipo de conexión.
+- **<*k/c*>** indica como debe ser el estado de la conexión después de realizar la petición. En el caso de utilizar el protocolo TCP, una k significa que se desea mantener la conexión con el servidor tras realizar la petición y una c significa que se desea finalizar la conexión con el servidor una vez realizada la petición. En el protocolo UDP este campo no es necesario ya que no se establece ningún tipo de conexión.
 
 ### Ejemplo de petición del cliente:
 
@@ -178,7 +178,7 @@ Significado de los campos:
 
 ### Registro de la actividad del cliente
 
-Por otra parte, el contenido tanto de las peticiones realizas por el cliente como las respuestas recibidas por el servidor se almacenarán en un fichero de texto cuyo nombre será el número de puerto efímero utilizado por el cliente en dicha comunicación.
+Por otra parte, el contenido tanto de las peticiones realizadas por el cliente como las respuestas recibidas por el servidor se almacenarán en un fichero de texto cuyo nombre será el número de puerto efímero utilizado por el cliente en dicha comunicación.
 
 En la siguiente imagen, se muestra un ejemplo del contenido de dicho fichero de texto:
 
@@ -189,7 +189,7 @@ En la siguiente imagen, se muestra un ejemplo del contenido de dicho fichero de 
 El proyecto, dentro de la carpeta **Sockets_HTTP**, cuenta con los siguientes ficheros:
 
 - Un fichero llamado ***servidor.c*** que contendrá el código necesario para recibir las peticiones de los clientes tanto en ***TCP*** como ***UDP*** y responder a los clientes de manera adecuada, siguiendo las normas del protocolo HTTP.
-- Un fichero llamado ***cliente.c*** que contendrá el código necesario para realizar peticiones al servidor tanto en ***TCP*** como ***UDP*** asi como el código necesario para recibir correctamente las respuestas suminsitradas por el servidor.
+- Un fichero llamado ***cliente.c*** que contendrá el código necesario para realizar peticiones al servidor tanto en ***TCP*** como ***UDP*** así como el código necesario para recibir correctamente las respuestas suministradas por el servidor.
 - Un fichero llamado ***makefile*** que contiene unas directivas de compilación básicas para generar un ejecutable tanto del programa cliente como del programa servidor.
 - Un fichero llamado ***ordenes.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
 - Un fichero llamado ***ordenes1.txt*** que contiene un conjunto de peticiones HTTP las cuales serán leídas y ejecutadas por el cliente.
@@ -203,13 +203,13 @@ El proyecto, dentro de la carpeta **Sockets_HTTP**, cuenta con los siguientes fi
 
 De esta manera, se consigue probar todos los tipos de peticiones HTTP posibles en los 2 protocolos de transporte (TCP y UDP) y probar como el servidor responde en cada una de estas situaciones.
 - Un fichero llamado ***peticiones.log*** que contiene un registro de las peticiones recibidas por el servidor mientras este se encontraba en mantenimiento. También se registran las comunicaciones establecidas y finalizadas con los distintos clientes.
-- Una carpeta llamada ***Paginas_web*** que contiene distintas páginas web en formato HTML. De esta manera, cuendo el servidor reciba una petición HTTP sobre una página web determinada, este buscará dentro de dicha carpeta y proporcionara el contenido de dicha página web en el caso de que esta exista.
+- Una carpeta llamada ***Paginas_web*** que contiene distintas páginas web en formato *HTML*. De esta manera, cuendo el servidor reciba una petición HTTP sobre una página web determinada, este buscará dentro de dicha carpeta y proporcionará el contenido de dicha página web en el caso de que esta exista.
 
 # - Pasos necesarios para ejecutar el programa
 
 **Paso 1: Compilar el programa**  
 
-Para ello se debe introducir el siguiente comando:    
+Para ello, se debe introducir el siguiente comando:    
 
 ```make```
 
@@ -227,13 +227,13 @@ Después, se ejecutará el cliente con la sintaxis especificada anteriormente. P
 
 **Paso 3: Obtención de resultados**  
 
-Se mostrará por la terminal el contenido de las respuestas del servidor en forma de contenido de páginas web o de mensajes de error. Se registrará en ***peticiones.log*** los eventos registrados por el servidor y se crearan los ficheros de depuración con el nombre del puerto efímero correspondientes.
+Se mostrará por la terminal el contenido de las respuestas del servidor en forma de contenido de páginas web o de mensajes de error. Se registrará en ***peticiones.log*** los eventos registrados por el servidor y se crearán los ficheros de depuración con el nombre del puerto efímero correspondiente.
 
 **Finalización del programa**
 
-Para finalizar la ejecución del cliente simplemente bastara con pulsar las teclas CTRL+C desde el terminal. De esta manera, el cliente automaticamente recibirá una señal de terminación por lo que realizará las tareas necsarias para finalizar el cliente. Sin embargo, el servidor seguira ejecutandose en segundo plano al tratarse de un proceso demonio.
+Para finalizar la ejecución del cliente simplemente bastara con pulsar las teclas *CTRL+C* desde el terminal. De esta manera, el cliente automáticamente recibirá una señal de terminación por lo que realizará las tareas necesarias para finalizar el cliente. Sin embargo, el servidor seguirá ejecutandose en segundo plano al tratarse de un proceso demonio.
 
-Para finalizar la ejecución del servidor, se debe buscar el PID del proceso correspondiente y matarlo con la orden kill. También es posible acabar con dicho proceso a través del monitor de recursos de Linux.
+Para finalizar la ejecución del servidor, se debe buscar el PID del proceso correspondiente y matarlo con la orden *kill*. También es posible acabar con dicho proceso a través del *monitor de recursos de Linux*.
 
 # - Ejemplo de ejecución
 
@@ -269,3 +269,10 @@ En último lugar, se mostrará el contenido del fichero ***peticiones.log*** tra
 ![Ejemplo ejecucion log](https://github.com/rmelgo/REDES-I-IMPLEMENTACION-PROTOCOLO-HTTP-SOCKETS/assets/145989723/91eb2660-aa4d-443c-acde-72e0ceb1785f)
 
 **Nota**: Mirar líneas 159-180, el resto no tiene que ver con los ejemplos realizados en esta sección.
+
+# - Participantes
+
+<table>
+  <td align="center"><a href="https://github.com/rmelgo"><img src="https://avatars.githubusercontent.com/u/145989723?s=400&u=e5c06adba3f3c418207178abc845d398b3d5f77f&v=4" width="100px;" alt=""/><br /><sub><b>Raúl Melgosa</b></sub></a><br/> 
+  <td align="center"><img src="https://avatars.githubusercontent.com/u/84237179?v=4" width="100px;" alt=""/><br /><sub><b>Juan Carlos Velasco</b></sub></a><br/> 
+</table>
